@@ -20,7 +20,7 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     private var dropHintViewController: DropHintViewController?
     private var viewLayoutCareTaker: ChildViewLayoutCareTaker
     
-    private let animationFrameType = "AnimationFrame"
+    private let animationFrameType = NSPasteboard.PasteboardType("AnimationFrame")
     
     @IBOutlet private var tableView: NSTableView!
     @IBOutlet private var tableViewContainer: NSScrollView!
@@ -124,13 +124,13 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        let cellView = tableView.make(withIdentifier: AssemblyFrameCellView.identifier(),
+        let cellView = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: AssemblyFrameCellView.identifier().rawValue),
                                       owner: self) as! AssemblyFrameCellView
         
         let imageFrame = assemblyArguments?.animationFrames[row]
         
         if let imageFrame = imageFrame {
-            cellView.imageView!.image = NSImage(contentsOf: NSURL(fileURLWithPath: imageFrame.path) as URL)
+            cellView.imageView!.image = NSImage(contentsOf: URL(fileURLWithPath: imageFrame.path))
             cellView.nameTextField.stringValue = imageFrame.name
             cellView.sizeTextField.stringValue = "\(Resource.String.size)\(String.colon) \(imageFrame.size) \(String.kilobyteAbbreviation)"
             cellView.delayTextField.stringValue = "\(Resource.String.delay)\(String.colon) \(imageFrame.displayableFrameDelay)"
@@ -151,7 +151,7 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
         return true
     }
     
-    func tableView(_ tableView: NSTableView, validateDrop info: NSDraggingInfo, proposedRow row: Int, proposedDropOperation dropOperation: NSTableViewDropOperation) -> NSDragOperation {
+    func tableView(_ tableView: NSTableView, validateDrop info: NSDraggingInfo, proposedRow row: Int, proposedDropOperation dropOperation: NSTableView.DropOperation) -> NSDragOperation {
         
         if dropOperation == .above {
             return .move
@@ -160,7 +160,7 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
         }
     }
     
-    func tableView(_ tableView: NSTableView, acceptDrop info: NSDraggingInfo, row: Int, dropOperation: NSTableViewDropOperation) -> Bool {
+    func tableView(_ tableView: NSTableView, acceptDrop info: NSDraggingInfo, row: Int, dropOperation: NSTableView.DropOperation) -> Bool {
         let pasteboard = info.draggingPasteboard()
         let pasteboardData = pasteboard.data(forType: animationFrameType)
         
@@ -245,7 +245,7 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     }
     
     private func configureTableView() {
-        tableView.register(forDraggedTypes: [animationFrameType])
+        tableView.registerForDraggedTypes([animationFrameType])
         tableViewContainer.isHidden = true
     }
     

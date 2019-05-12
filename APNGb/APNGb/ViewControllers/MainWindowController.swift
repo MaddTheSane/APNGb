@@ -112,7 +112,7 @@ class MainWindowController: NSWindowController, ActionToolbarDelegate {
         openPanel.beginSheetModal(for: self.window!,
                                   completionHandler: { response in
                                     
-                                    if response == NSFileHandlingPanelOKButton {
+                                    if response == .OK {
                                         let destinationDirectoryUrl = openPanel.urls[0]
                                         onOkButtonPressed(destinationDirectoryUrl)
                                     } else {

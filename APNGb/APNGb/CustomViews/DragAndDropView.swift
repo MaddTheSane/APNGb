@@ -22,7 +22,7 @@ final class DragAndDropView: NSView {
     required init?(coder: NSCoder) {
         validator = DragAndDropValidator(withAllowedFileTypes: allowedFileTypes)
         super.init(coder: coder)
-        self.register(forDraggedTypes: [NSFilenamesPboardType])
+		//self.registerForDraggedTypes([NSFilenamesPboardType])
     }
     
     // MARK: - NSDraggingDestination

@@ -40,11 +40,10 @@ extension NSViewController {
     /// - Parameter identifier: Storyboard identifier of the child view controller.
     /// - Returns: View controller identified by storyboard identifier or `nil` if
     /// no view controller was associated with that identifier.
-    func showChildViewController(withIdentifier identifier: String) -> NSViewController? {
+    func showChildViewController(withIdentifier identifier: NSStoryboard.SceneIdentifier) -> NSViewController? {
         let loadedController = storyboard?.instantiateController(withIdentifier: identifier)
         
-        if loadedController is NSViewController {
-            let childViewController = loadedController as! NSViewController
+        if let childViewController = loadedController as? NSViewController {
             self.addChildViewController(childViewController)
             childViewController.view.translatesAutoresizingMaskIntoConstraints = false
             self.view.addSubview(childViewController.view)

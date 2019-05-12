@@ -11,7 +11,7 @@ import Cocoa
 final class Strip: NSObject, CommandArgumentable  {
 
     var orientation = StripOrientation.none.rawValue
-    var numberOfFrames = 0
+    @objc var numberOfFrames = 0
     
     override func setNilValueForKey(_ key: String) {
         

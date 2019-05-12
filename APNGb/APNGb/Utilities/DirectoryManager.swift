@@ -64,15 +64,15 @@ class DirectoryManager {
     }
     
     func workingDirectoryUrl(forCommandExecutable executable: CommandExecutable) -> URL? {
-        let temporaryDirectoryUrl = NSURL(fileURLWithPath: NSTemporaryDirectory())
+        let temporaryDirectoryUrl = URL(fileURLWithPath: NSTemporaryDirectory())
         let mainDirectoryUrl = temporaryDirectoryUrl.appendingPathComponent(Resource.Directory.main)
         var destinationDirectoryUrl: URL? = nil
         
         switch executable {
         case .assembly:
-            destinationDirectoryUrl = mainDirectoryUrl?.appendingPathComponent(Resource.Directory.assembly)
+            destinationDirectoryUrl = mainDirectoryUrl.appendingPathComponent(Resource.Directory.assembly)
         case .disassembly:
-            destinationDirectoryUrl = mainDirectoryUrl?.appendingPathComponent(Resource.Directory.disassembly)
+            destinationDirectoryUrl = mainDirectoryUrl.appendingPathComponent(Resource.Directory.disassembly)
         default:
             destinationDirectoryUrl = nil
         }
@@ -92,7 +92,7 @@ class DirectoryManager {
                                                             withIntermediateDirectories: true,
                                                             attributes: nil)
                     #if DEBUG
-                        NSWorkspace.shared().open(directoryUrl)
+                        NSWorkspace.shared.open(directoryUrl)
                     #endif
                 } catch let error {
                     NSLog("\(#function): \(error)")

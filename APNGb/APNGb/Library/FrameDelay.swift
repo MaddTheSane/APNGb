@@ -20,14 +20,14 @@ enum NotificationIdentifier: String {
 final class FrameDelay: NSObject, CommandArgumentable {
     
     var category: FrameDelayCategory
-    var enabled: Bool
-    var seconds = 1 {
+    @objc var enabled: Bool
+    @objc var seconds = 1 {
         
         didSet {
             self.notifyObservers()
         }
     }
-    var frames = 10 {
+    @objc var frames = 10 {
         
         didSet {
             self.notifyObservers()

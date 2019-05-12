@@ -39,18 +39,15 @@ struct DragAndDropValidator {
     
     func draggingResult(_ sender: NSDraggingInfo) -> [String] {
         
-        if let droppedImagesPaths = sender.draggingPasteboard().propertyList(forType: NSFilenamesPboardType) as? Array<String> {
+        if let droppedImagesPaths = sender.draggingPasteboard().propertyList(forType: NSPasteboard.PasteboardType("NSFilenamesPboardType")) as? Array<String> {
             var paths: [String] = []
             
             for imagePath in droppedImagesPaths {
-                let imageUrl = NSURL(fileURLWithPath: imagePath)
-                let fileExtension = imageUrl.lastPathComponent?.fileExtension()
+                let imageUrl = URL(fileURLWithPath: imagePath)
+                let fileExtension = imageUrl.pathExtension
                 
-                if let fileExtension = fileExtension {
-                    
-                    if allowedFileTypes.contains(fileExtension) {
-                        paths.append(imagePath)
-                    }
+                if allowedFileTypes.contains(fileExtension) {
+                    paths.append(imagePath)
                 }
             }
             
@@ -66,7 +63,7 @@ struct DragAndDropValidator {
     /// - Returns: `true` if image extension is legal, else returns `false`.
     func isImageTypeAllowed(drag: NSDraggingInfo) -> Bool {
         
-        if let droppedImagesPaths = drag.draggingPasteboard().propertyList(forType: NSFilenamesPboardType) as? Array<String> {
+        if let droppedImagesPaths = drag.draggingPasteboard().propertyList(forType: NSPasteboard.PasteboardType("NSFilenamesPboardType")) as? Array<String> {
             let url = NSURL(fileURLWithPath: droppedImagesPaths[0])
             
             if let fileExtension = url.pathExtension?.lowercased() {

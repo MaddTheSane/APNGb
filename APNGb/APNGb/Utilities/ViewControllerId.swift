@@ -6,6 +6,8 @@
 //  Copyright © 2016 Godoroja Stefan. All rights reserved.
 //
 
+import AppKit.NSStoryboard
+
 /// Maps identifiers for all view controllers from the application.
 ///
 /// - Assembly: AssemblyViewController identifier
@@ -42,24 +44,24 @@ extension ViewControllerId {
     ///
     /// - Returns: Storyboard identifier if view controller
     ///  has a valid identifier, else returns an empty string.
-    func storyboardVersion() -> String {
+    func storyboardVersion() -> NSStoryboard.SceneIdentifier {
         switch self {
         case .Assembly:
-            return "assembly.view"
+            return NSStoryboard.SceneIdentifier(rawValue: "assembly.view")
         case .Disassembly:
-            return "disassembly.view"
+            return NSStoryboard.SceneIdentifier(rawValue: "disassembly.view")
         case .Preferences:
-            return "preferences.view"
+            return NSStoryboard.SceneIdentifier(rawValue: "preferences.view")
         case .DropHint:
-            return "drophint.view"
+            return NSStoryboard.SceneIdentifier(rawValue: "drophint.view")
         case .ChildContainer:
-            return "childcontainer.view"
+            return NSStoryboard.SceneIdentifier(rawValue: "childcontainer.view")
         case .AssemblyPreferences:
-            return "assemblypreferences.view"
+            return NSStoryboard.SceneIdentifier(rawValue: "assemblypreferences.view")
         case .DisassemblyPreferences:
-            return "disassemblypreferences.view"
+            return NSStoryboard.SceneIdentifier(rawValue: "disassemblypreferences.view")
         default:
-            return String.empty
+            return NSStoryboard.SceneIdentifier(rawValue: String.empty)
         }
     }
 }

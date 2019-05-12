@@ -10,7 +10,7 @@ import Cocoa
 
 extension Bool {
     
-    init<T: Integer>(_ num: T) {
+    init<T: FixedWidthInteger>(_ num: T) {
         self.init(num != 0)
     }
 }

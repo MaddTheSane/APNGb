@@ -18,7 +18,7 @@ final class AssemblyFrameCellView: NSTableCellView {
         return 60.0
     }
     
-    static func identifier() -> String {
-        return "assembly.frame.cell"
+    static func identifier() -> NSStoryboard.SceneIdentifier {
+        return NSStoryboard.SceneIdentifier("assembly.frame.cell")
     }
 }

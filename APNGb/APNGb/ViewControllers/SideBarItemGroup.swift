@@ -34,7 +34,7 @@ class SideBarItemGroup: NSObject {
         
         if index < items.count {
             let item = items[index]
-            item.state = NSOnState
+            item.state = .on
         }
     }
     
@@ -46,9 +46,9 @@ class SideBarItemGroup: NSObject {
         self.delegate?.didClickOnItem(atIndex: selectedItemIndex!)
         
         for item in items {
-            item.state = NSOffState
+            item.state = .off
         }
         
-        item.state = NSOnState
+        item.state = .on
     }
 }

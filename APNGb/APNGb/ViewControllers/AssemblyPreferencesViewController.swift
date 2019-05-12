@@ -10,8 +10,8 @@ import Cocoa
 
 final class AssemblyPreferencesViewController: NSViewController {
     
-    dynamic var assemblyArguments: AssemblyArguments?
-    dynamic var stripPopUpDataSource: StripPopUpDataSource
+    @objc dynamic var assemblyArguments: AssemblyArguments?
+    @objc dynamic var stripPopUpDataSource: StripPopUpDataSource
     
     required init?(coder: NSCoder) {
         stripPopUpDataSource = StripPopUpDataSource()
