@@ -124,7 +124,7 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        let cellView = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: AssemblyFrameCellView.identifier().rawValue),
+        let cellView = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: AssemblyFrameCellView.identifier()),
                                       owner: self) as! AssemblyFrameCellView
         
         let imageFrame = assemblyArguments?.animationFrames[row]
@@ -161,7 +161,7 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
     }
     
     func tableView(_ tableView: NSTableView, acceptDrop info: NSDraggingInfo, row: Int, dropOperation: NSTableView.DropOperation) -> Bool {
-        let pasteboard = info.draggingPasteboard()
+        let pasteboard = info.draggingPasteboard
         let pasteboardData = pasteboard.data(forType: animationFrameType)
         
         if let pasteboardData = pasteboardData {

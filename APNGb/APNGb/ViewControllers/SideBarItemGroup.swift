@@ -42,7 +42,7 @@ class SideBarItemGroup: NSObject {
     
     @objc
     private func didClickOn(item: NSButton) {
-        let selectedItemIndex = items.index(of: item)
+        let selectedItemIndex = items.firstIndex(of: item)
         self.delegate?.didClickOnItem(atIndex: selectedItemIndex!)
         
         for item in items {

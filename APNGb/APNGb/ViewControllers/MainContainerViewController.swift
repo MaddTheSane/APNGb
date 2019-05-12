@@ -82,7 +82,7 @@ final class MainContainerViewController: NSSplitViewController, Clickable, Comma
     
     private func setupChildViewControllers() {
         
-        for childViewController in self.childViewControllers {
+        for childViewController in self.children {
             
             // Find SideBar VC
             if childViewController is SideBarViewController {

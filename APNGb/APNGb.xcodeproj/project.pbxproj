@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		551106402287AFAD003D8D2C /* DummyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5511063F2287AFAD003D8D2C /* DummyTests.swift */; };
 		AB04ACFC1E040E62002D2B40 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB04ACFB1E040E62002D2B40 /* MainWindowController.swift */; };
 		AB04AD041E046A58002D2B40 /* AssemblyFrameRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB04AD031E046A58002D2B40 /* AssemblyFrameRowView.swift */; };
 		AB0FD07E1E04B8F70023E528 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0FD07D1E04B8F70023E528 /* Theme.swift */; };
@@ -37,9 +38,7 @@
 		AB8CFEC01DFB327E00691ECC /* ChildContainerViewLayoutCareTaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8CFEBF1DFB327E00691ECC /* ChildContainerViewLayoutCareTaker.swift */; };
 		AB8CFEC41DFB537D00691ECC /* DisassemblyPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8CFEC31DFB537D00691ECC /* DisassemblyPreferencesViewController.swift */; };
 		AB97CAC91DA1600300A6A272 /* AssemblyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97CAC51DA1600300A6A272 /* AssemblyViewController.swift */; };
-		AB97CACA1DA1600300A6A272 /* AssemblyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97CAC51DA1600300A6A272 /* AssemblyViewController.swift */; };
 		AB97CACB1DA1600300A6A272 /* DisassemblyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97CAC61DA1600300A6A272 /* DisassemblyViewController.swift */; };
-		AB97CACC1DA1600300A6A272 /* DisassemblyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97CAC61DA1600300A6A272 /* DisassemblyViewController.swift */; };
 		AB9830331DB79C57009E0254 /* DisassemblyArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9830321DB79C57009E0254 /* DisassemblyArguments.swift */; };
 		AB98303A1DB7B065009E0254 /* FileManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9830391DB7B065009E0254 /* FileManagerExtension.swift */; };
 		ABABA26B1DF77A0600A90962 /* MainContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABABA26A1DF77A0600A90962 /* MainContainerViewController.swift */; };
@@ -75,6 +74,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5511063F2287AFAD003D8D2C /* DummyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyTests.swift; sourceTree = "<group>"; };
 		AB04ACFB1E040E62002D2B40 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainWindowController.swift; path = ViewControllers/MainWindowController.swift; sourceTree = "<group>"; };
 		AB04AD031E046A58002D2B40 /* AssemblyFrameRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AssemblyFrameRowView.swift; path = Cells/AssemblyFrameRowView.swift; sourceTree = "<group>"; };
 		AB0FD07D1E04B8F70023E528 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Theme.swift; path = Utilities/Theme.swift; sourceTree = "<group>"; };
@@ -292,6 +292,7 @@
 		AB3DF2401D8DDE660048BE0A /* APNGbTests */ = {
 			isa = PBXGroup;
 			children = (
+				5511063F2287AFAD003D8D2C /* DummyTests.swift */,
 				AB3DF2431D8DDE660048BE0A /* Info.plist */,
 			);
 			path = APNGbTests;
@@ -532,11 +533,13 @@
 					AB3DF22B1D8DDE660048BE0A = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 7YX3D8UMCU;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 					AB3DF23C1D8DDE660048BE0A = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = Q453Q9XLFV;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						TestTargetID = AB3DF22B1D8DDE660048BE0A;
 					};
@@ -643,8 +646,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB97CACA1DA1600300A6A272 /* AssemblyViewController.swift in Sources */,
-				AB97CACC1DA1600300A6A272 /* DisassemblyViewController.swift in Sources */,
+				551106402287AFAD003D8D2C /* DummyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -787,7 +789,7 @@
 				OTHER_SWIFT_FLAGS = "-DDebug";
 				PRODUCT_BUNDLE_IDENTIFIER = gs.godorojastefan.APNGb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -804,7 +806,7 @@
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = gs.godorojastefan.APNGb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -813,13 +815,15 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = Q453Q9XLFV;
 				INFOPLIST_FILE = APNGbTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = gs.godorojastefan.APNGbTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/APNGb.app/Contents/MacOS/APNGb";
 			};
 			name = Debug;
@@ -829,13 +833,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = Q453Q9XLFV;
 				INFOPLIST_FILE = APNGbTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = gs.godorojastefan.APNGbTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/APNGb.app/Contents/MacOS/APNGb";
 			};
 			name = Release;

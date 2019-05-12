@@ -13,9 +13,9 @@ extension NSViewController {
     /// Removes all child view controllers together with associated views.
     func removeChildViewControllers() {
         
-        for childViewController in self.childViewControllers {
+        for childViewController in self.children {
             childViewController.view.removeFromSuperview()
-            childViewController.removeFromParentViewController()
+            childViewController.removeFromParent()
         }
     }
     
@@ -25,12 +25,12 @@ extension NSViewController {
     /// `childviewcontrollers` stack.
     func removeChildViewControllersExcept(viewControllers: [NSViewController]) {
         
-        for childViewController in self.childViewControllers {
+        for childViewController in self.children {
             
             if viewControllers.contains(childViewController) == false {
                 
                 childViewController.view.removeFromSuperview()
-                childViewController.removeFromParentViewController()
+                childViewController.removeFromParent()
             }
         }
     }
@@ -44,7 +44,7 @@ extension NSViewController {
         let loadedController = storyboard?.instantiateController(withIdentifier: identifier)
         
         if let childViewController = loadedController as? NSViewController {
-            self.addChildViewController(childViewController)
+            self.addChild(childViewController)
             childViewController.view.translatesAutoresizingMaskIntoConstraints = false
             self.view.addSubview(childViewController.view)
             return childViewController

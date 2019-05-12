@@ -47,21 +47,21 @@ extension ViewControllerId {
     func storyboardVersion() -> NSStoryboard.SceneIdentifier {
         switch self {
         case .Assembly:
-            return NSStoryboard.SceneIdentifier(rawValue: "assembly.view")
+            return "assembly.view"
         case .Disassembly:
-            return NSStoryboard.SceneIdentifier(rawValue: "disassembly.view")
+            return "disassembly.view"
         case .Preferences:
-            return NSStoryboard.SceneIdentifier(rawValue: "preferences.view")
+            return "preferences.view"
         case .DropHint:
-            return NSStoryboard.SceneIdentifier(rawValue: "drophint.view")
+            return "drophint.view"
         case .ChildContainer:
-            return NSStoryboard.SceneIdentifier(rawValue: "childcontainer.view")
+            return "childcontainer.view"
         case .AssemblyPreferences:
-            return NSStoryboard.SceneIdentifier(rawValue: "assemblypreferences.view")
+            return "assemblypreferences.view"
         case .DisassemblyPreferences:
-            return NSStoryboard.SceneIdentifier(rawValue: "disassemblypreferences.view")
+            return "disassemblypreferences.view"
         default:
-            return NSStoryboard.SceneIdentifier(rawValue: String.empty)
+            return String.empty
         }
     }
 }
