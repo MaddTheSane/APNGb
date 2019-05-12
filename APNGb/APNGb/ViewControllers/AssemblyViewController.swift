@@ -202,7 +202,7 @@ final class AssemblyViewController: NSViewController, NSTableViewDelegate, NSTab
         
         for imagePath in paths {
             let imageSizeInKB = FileManager.default.sizeOfFile(atPath: imagePath)
-            let droppedImage = AnimationFrame(url: URL(fileURLWithPath: imagePath) as NSURL,
+            let droppedImage = AnimationFrame(url: URL(fileURLWithPath: imagePath),
                                               size: imageSizeInKB)
             assemblyArguments?.animationFrames.append(droppedImage)
         }

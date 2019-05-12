@@ -22,19 +22,11 @@ final class AnimationFrame {
     private(set) var size: Int
     private(set) var name: String
     
-    init(url: NSURL, size: Int) {
+    init(url: URL, size: Int) {
         self.size = size
         
-        if let lastPathComponent = url.lastPathComponent {
-            self.name = lastPathComponent
-        } else {
-            self.name = String.empty
-        }
-        
-        if let urlAsPath = url.path {
-            self.path = urlAsPath
-        } else {
-            self.path = String.empty
-        }
+        self.name = url.lastPathComponent
+    
+        self.path = url.path
     }
 }

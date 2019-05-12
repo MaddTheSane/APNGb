@@ -18,20 +18,10 @@ extension String {
     static let kilobyteAbbreviation = "KB"
     
     func fileName() -> String {
-        
-        if let fileNameWithoutExtension = NSURL(fileURLWithPath: self).deletingPathExtension?.lastPathComponent {
-            return fileNameWithoutExtension
-        } else {
-            return String.empty
-        }
+        return URL(fileURLWithPath: self).deletingPathExtension().lastPathComponent
     }
     
     func fileExtension() -> String {
-        
-        if let fileExtension = NSURL(fileURLWithPath: self).pathExtension {
-            return fileExtension
-        } else {
-            return String.empty
-        }
+        return URL(fileURLWithPath: self).pathExtension
     }
 }
